@@ -27,6 +27,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                            <label for="phone_number" class="col-md-4 control-label">phone number</label>
+
+                            <div class="col-md-6">
+                                <input id="phone_number" type="phone" class="form-control" name="phone number" value="{{ $phone_number or old('phone_number') }}" required autofocus>
+
+                                @if ($errors->has('phone number'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone_number') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 

@@ -41,15 +41,7 @@ class PhoneController extends Controller
       $phone = $phone->find($request->id);
                 return view('phone_edit', ['phone'=>$phone]);
     }
-     public function updateLamp(Request $request, Phone $phone) {
-      //   $lamp_obj = new lamps();
-      //   $name = $request['name'];
-         //   $kreplenie = $request['kreplenie'];
-          //   $width = $request['width'];
-          //   $color = $request['color'];
-         //    $material = $request['material'];
-         //   $height = $request['height'];
-        //$lamp = $lamp_obj->updateLamp($id, $name, $kreplenie, $width, $color, $material, $height);
+     public function updatePhone(Request $request, Phone $phone) {
          
 
           $phone = $phone->find($request->id);

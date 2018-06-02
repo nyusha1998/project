@@ -61,39 +61,41 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: #45A0A4;
+  background: -webkit-linear-gradient(right, #E3612C 0, #E3612C 33.3%, #FCCE30 33.3%, #FCCE30 66.6%, #58554B 66.6%, #58554B) bottom no-repeat;
+  background: -o-linear-gradient(right, #E3612C 0, #E3612C 33.3%, #FCCE30 33.3%, #FCCE30 66.6%, #58554B 66.6%, #58554B) bottom no-repeat;
+  background: linear-gradient(to right, #E3612C 0, #E3612C 33.3%, #FCCE30 33.3%, #FCCE30 66.6%, #58554B 66.6%, #58554B) bottom no-repeat;
+  background-size: 100% 5px;
             }
+            p
+   {
+    margin-right: 50px;
+    margin-bottom: 20px;overflow: hidden;
+    display: inline-block;
+   border-radius: 500px;
+   width:110px;
+  color:  #36454A;
+  background: -webkit-linear-gradient(top, #A4D3E0 , #A4D3E0 50%, #CBE3EB 50%);
+  background: -o-linear-gradient(top, #A4D3E0 , #A4D3E0 50%, #CBE3EB 50%);
+  background: linear-gradient(to top, #A4D3E0 , #A4D3E0 50%, #CBE3EB 50%);
+  box-shadow: 10px 10px 20px black;
+   }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel222
+                    Добро пожаловать!
                 </div>
 
                  <p>
-            <a href="{{route('users')}}">Перейти к пользователям</a></p>
+            <a href="{{route('klients')}}">Перейти к клиентам</a></p>
             <p>
-            <a href="{{route('articles')}}">Перейти к статьям</a></p>
-            <p>
-            <a href="{{route('lamps')}}">Перейти к лампам</a></p>
-             <p>
-            <a href="{{route('query')}}">Перейти к запросу</a></p>
-            <p>
-            <a href="{{route('child')}}">Перейти к кафедре</a></p>
-             <p>
-            <a href="{{route('project')}}">Перейти к проекту</a></p>
+            <a href="{{route('phones')}}">Перейти к телефонам</a></p>
+<p>
+            <a href="{{route('orders')}}">Перейти к заказам</a></p>
+            
                 </div>
             </div>
         </div>

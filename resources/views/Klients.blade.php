@@ -1,6 +1,6 @@
 <style>
 
-   #phones
+   #klients
    {
     overflow: hidden;
     display: inline-block;
@@ -33,18 +33,24 @@ font-size:20px;
   }
 </style>
 
-<center><h1>Телефоны</h1>
-    <div id="phones">
-        @foreach ($phones as $phone)
-            <div>Модель: {{$phone->model}}</div>
-            <div>Год: {{$phone->year}} г.</div>
-            <div>Цена: {{$phone->price}} гривен</div>
-        <a href="{{route('phone_delete',$phone->id)}}">Удалить</a> 
-        <a href="{{route('phone_edit',$phone->id)}}">Редактировать</a>
+<center><h1>Клиенты</h1>
+    <div id="klients">
+        @foreach ($klients as $klient)
+            <div>Имя: {{$klient->name}}</div>
+            <div>Фамилия: {{$klient->surname}}</div>
+            <div>Возраст: {{$klient->age}} </div>
+        <a href="{{route('klient_delete',$klient->id)}}">Удалить</a> 
+        <a href="{{route('klient_edit',$klient->id)}}">Редактировать</a>
 </br> </br>
         @endforeach        
 </div>
  <p>      
-<a href="{{route('phone_add')}}">Добавить</a></p>
+<a href="{{route('klient_add')}}">Добавить</a></p>
+
+
+
+
+ <p>      
+<a href="{{route('sum')}}">Итого</a></p>
 </center>
 

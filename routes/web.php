@@ -83,4 +83,26 @@ Route::post('phone_create','PhoneController@createPhone')->name('phone_create');
 
 Route::get('phone_edit/{id}','PhoneController@editPhone')->name('phone_edit');
 
-Route::post('phone_update/{id}','PhoneController@updateLamp')->name('phone_update');
+Route::post('phone_update/{id}','PhoneController@updatePhone')->name('phone_update');
+
+Route::get('/project', function(){
+	return view('project');	
+})->name('project');
+
+Route::get('klients','KlientsController@getAllKlients')->name('klients');
+
+Route::get('klient_delete/{id}','KlientsController@deleteKlient')->name('klient_delete');
+
+Route::get('/klient_add', function () {
+    return view('klient_add');
+})->name('klient_add');
+
+Route::post('klient_create','KlientsController@createKlient')->name('klient_create');
+
+Route::get('klient_edit/{id}','KlientsController@editKlient')->name('klient_edit');
+
+Route::post('klient_update/{id}','KlientsController@updateKlient')->name('klient_update');
+
+Route::get('orders','OrdersController@getAllOrders')->name('orders');
+
+Route::get('sum','KlientsController@sum')->name('sum');

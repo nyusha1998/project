@@ -1,6 +1,6 @@
 <style>
 
-   #phones
+   #orders
    {
     overflow: hidden;
     display: inline-block;
@@ -33,18 +33,15 @@ font-size:20px;
   }
 </style>
 
-<center><h1>Телефоны</h1>
-    <div id="phones">
-        @foreach ($phones as $phone)
-            <div>Модель: {{$phone->model}}</div>
-            <div>Год: {{$phone->year}} г.</div>
-            <div>Цена: {{$phone->price}} гривен</div>
-        <a href="{{route('phone_delete',$phone->id)}}">Удалить</a> 
-        <a href="{{route('phone_edit',$phone->id)}}">Редактировать</a>
+<center><h1>Заказы</h1>
+    <div id="orders">
+        @foreach ($orders as $order)
+            <div>Модель: {{$order->model}}</div>
+            <div>Цена: {{$order->price}}</div>
+            <div>Фамилия: {{$order->surname}} </div>
+        <a href="{{route('order_delete',$order->id)}}">Удалить</a> 
 </br> </br>
         @endforeach        
 </div>
- <p>      
-<a href="{{route('phone_add')}}">Добавить</a></p>
 </center>
 
