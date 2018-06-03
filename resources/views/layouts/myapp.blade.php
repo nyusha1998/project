@@ -15,8 +15,8 @@
 </head>
 <style>
 .backgrounds {
-float:none;
-height:auto;
+/*float:none;*/
+min-height:800px;
 margin:0 auto;
 position: relative;
 width:100%;
@@ -59,7 +59,7 @@ text-transform:uppercase;
       <header class="bg-holder">
         <div class="banner">
           <div class="logo">
-  КИТ
+  Проект
           </div>
 
       </br></br></br>

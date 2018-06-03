@@ -1,4 +1,14 @@
-<form method="POST" action="{{route('phone_create')}}">
+@extends('layouts.myapp')
+
+@section('title', 'Проект')
+
+@section('sidebar')
+@parent
+
+@endsection
+
+@section('content')
+<center><form method="POST" action="{{route('phone_create')}}">
     <label for="model">Модель: </label>
     <input type="text" name="model" style="display: block;" >
     <label for="year">Год: </label>
@@ -7,4 +17,6 @@
     <input type="text" name="price" style="display: block;" >
     <input type="submit" name="submit">
     {{ csrf_field() }}
-</form>       
+</form>
+</center>
+@endsection       

@@ -1,3 +1,13 @@
+@extends('layouts.myapp')
+
+@section('title', 'Проект')
+
+@section('sidebar')
+@parent
+
+@endsection
+
+@section('content')
 <style>
 
    #klients
@@ -54,3 +64,4 @@ font-size:20px;
 <a href="{{route('sum')}}">Итого</a></p>
 </center>
 
+@endsection

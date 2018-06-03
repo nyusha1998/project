@@ -1,3 +1,13 @@
+@extends('layouts.myapp')
+
+@section('title', 'Проект')
+
+@section('sidebar')
+@parent
+
+@endsection
+
+@section('content')
 <style>
 
    #orders
@@ -45,3 +55,4 @@ font-size:20px;
 </div>
 </center>
 
+@endsection

@@ -1,3 +1,13 @@
+@extends('layouts.myapp')
+
+@section('title', 'Проект')
+
+@section('sidebar')
+@parent
+
+@endsection
+
+@section('content')
 <style>
 
    #phones
@@ -48,3 +58,4 @@ font-size:20px;
 <a href="{{route('phone_add')}}">Добавить</a></p>
 </center>
 
+@endsection
