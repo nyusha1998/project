@@ -41,6 +41,18 @@ font-size:20px;
   transition: all 1s;
   font-size:20px;
   }
+  button{
+    overflow: hidden;
+    display: inline-block;
+    font-style: italic;
+    text-shadow: 1px 1px 0 #45A0A4,
+               1px -1px 0 #45A0A4,
+               -1px 1px 0 #45A0A4,
+              -1px -1px 0 #45A0A4;
+  color: white;
+  transition: all 1s;
+font-size:20px;
+  }
 </style>
 
 <center><h1>Заказы</h1>
@@ -50,16 +62,20 @@ font-size:20px;
             <div>Цена: {{$order->price}}</div>
             <div>Год: {{$order->year}} г.</div>
             <div>Цена: {{$order->price}} гривен</div>
-            <form class="form-horizontal" method="POST" action="{{ route('phone.back', ['phone' => $order->id]) }}">
+          </br></br>
+            <form class="form-horizontal" onclick="return confirm('Вы уверены?')" method="POST" action="{{ route('phone.back', ['phone' => $order->id]) }}">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
-            <button type="submit" id="order-back" class="btn btn-danger">
+            <button type="submit" id="order-back" class="btn btn-success">
               <i class="fa fa-btn fa-trash"></i>Отмена
             </button>
       </form>
 </br> </br>
         @endforeach   
-          <div>Итого: {{$price}}</div>     
+          <div>Итого: {{$price}}</div>
+          <p>
+<a href="{{route('project')}}">Перейти к главной</a>
+<a href="{{route('phones')}}">Перейти к телефонам</a>    
 </div>
 
 </center>

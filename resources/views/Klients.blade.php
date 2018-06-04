@@ -49,19 +49,15 @@ font-size:20px;
             <div>Имя: {{$klient->name}}</div>
             <div>Фамилия: {{$klient->surname}}</div>
             <div>Возраст: {{$klient->age}} </div>
-        <a href="{{route('klient_delete',$klient->id)}}">Удалить</a> 
+        <a class="" onclick="return confirm('Вы уверены?')" href="{{route('klient_delete',$klient->id)}}">Удалить<i class="fa fa-trash"></i></a> 
         <a href="{{route('klient_edit',$klient->id)}}">Редактировать</a>
 </br> </br>
         @endforeach        
 </div>
  <p>      
 <a href="{{route('klient_add')}}">Добавить</a></p>
-
-
-
-
- <p>      
-<a href="{{route('sum')}}">Итого</a></p>
+<p>
+<a href="{{route('project')}}">Перейти к главной</a></p>
 </center>
 
 @endsection

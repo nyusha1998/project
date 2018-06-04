@@ -41,6 +41,18 @@ font-size:20px;
   transition: all 1s;
   font-size:20px;
   }
+  button{
+    overflow: hidden;
+    display: inline-block;
+    font-style: italic;
+    text-shadow: 1px 1px 0 #45A0A4,
+               1px -1px 0 #45A0A4,
+               -1px 1px 0 #45A0A4,
+              -1px -1px 0 #45A0A4;
+  color: white;
+  transition: all 1s;
+font-size:20px;
+  }
 </style>
 
 <center><h1>Телефоны</h1>
@@ -49,14 +61,15 @@ font-size:20px;
             <div>Модель: {{$phone->model}}</div>
             <div>Год: {{$phone->year}} г.</div>
             <div>Цена: {{$phone->price}} гривен</div>
-        <a href="{{route('phone_delete',$phone->id)}}">Удалить</a> 
+        <a class="" onclick="return confirm('Вы уверены?')" href="{{route('phone_delete',$phone->id)}}">Удалить<i class="fa fa-trash"></i></a> 
         <a href="{{route('phone_edit',$phone->id)}}">Редактировать</a>
+      </br></br>
          <form class="form-horizontal" method="POST" action="{{ route('phone.order', ['phone' => $phone->id]) }}">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
             <input id="user_id" type="hidden" class="form-control" name="user_id" value="{{ Auth::id() }}">
-            <button type="submit" id="order-.order" class="btn btn-danger">
-              <i class="fa fa-btn fa-trash"></i>Заказать
+            <button type="submit" id="order-.order" class="btn btn-success">
+              Заказать
             </button>
            </form>
 </br> </br>
@@ -64,6 +77,9 @@ font-size:20px;
 </div>
  <p>      
 <a href="{{route('phone_add')}}">Добавить</a></p>
+<p>
+<a href="{{route('project')}}">Перейти к главной</a>
+<a href="{{route('orders')}}">Перейти к заказам</a>
 </center>
 
 @endsection
