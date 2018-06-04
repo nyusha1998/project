@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Phone;
+use Illuminate\Support\Facades\Auth;
 
 class PhoneController extends Controller
 {
@@ -52,6 +53,35 @@ class PhoneController extends Controller
 
           return redirect()->route('phones');
          
+     } 
+     public function orderPhone(Request $request, Phone $phone) {
+         
+
+          $phone = $phone->find($request->phone->id);
+          $phone->user_id = $request->user_id;
+          //$phone->user_id = 3;
+          $phone->save(); 
+
+          return redirect()->route('phones');
+         
+     }
+      public function showOrderPhone(Request $request, Phone $phone) {
+ 		$phone_arr = Phone::all()->where('user_id', Auth::id());
+ 		$price = 0;
+ 		foreach ($phone_arr as $phone) {
+    		$price = $price+$phone->price;
+		}
+		return view('Orders', ['orders' => $phone_arr,
+							   'price' => $price]);      
+     } 
+
+      public function backOrderPhone(Request $request, Phone $phone) {
+ 		  $phone = $phone->find($request->phone->id);
+          $phone->user_id = null;
+          //$phone->user_id = 3;
+          $phone->save(); 
+
+          return redirect()->route('orders');
      } 
 
 }

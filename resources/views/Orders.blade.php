@@ -48,11 +48,20 @@ font-size:20px;
         @foreach ($orders as $order)
             <div>Модель: {{$order->model}}</div>
             <div>Цена: {{$order->price}}</div>
-            <div>Фамилия: {{$order->surname}} </div>
-        <a href="{{route('order_delete',$order->id)}}">Удалить</a> 
+            <div>Год: {{$order->year}} г.</div>
+            <div>Цена: {{$order->price}} гривен</div>
+            <form class="form-horizontal" method="POST" action="{{ route('phone.back', ['phone' => $order->id]) }}">
+            {{ csrf_field() }}
+            {{ method_field('PATCH') }}
+            <button type="submit" id="order-back" class="btn btn-danger">
+              <i class="fa fa-btn fa-trash"></i>Отмена
+            </button>
+      </form>
 </br> </br>
-        @endforeach        
+        @endforeach   
+          <div>Итого: {{$price}}</div>     
 </div>
+
 </center>
 
 @endsection

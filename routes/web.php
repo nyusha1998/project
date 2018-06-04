@@ -103,6 +103,10 @@ Route::get('klient_edit/{id}','KlientsController@editKlient')->name('klient_edit
 
 Route::post('klient_update/{id}','KlientsController@updateKlient')->name('klient_update');
 
-Route::get('orders','OrdersController@getAllOrders')->name('orders');
+Route::get('orders','PhoneController@showOrderPhone')->name('orders');
 
 Route::get('sum','KlientsController@sum')->name('sum');
+
+Route::put('/phone-order/{phone}', 'PhoneController@orderPhone')->name('phone.order');
+
+Route::patch('/phone-back/{phone}', 'PhoneController@backOrderPhone')->name('phone.back');
